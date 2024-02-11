@@ -1,0 +1,151 @@
+.home{
+    max-width: 100%;
+    overflow-x: hidden;
+   
+}
+.corousal{
+    position: absolute;
+    height: 720px;
+    width: 100vw;
+    z-index: -1;
+    overflow: hidden;
+    
+}
+.corousal .carousel{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height:100%;
+}
+
+
+.corousal .carousel-inner{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height:100%;
+}
+.corousal .carousel-item{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height:100%;
+    transition: transform 2s linear;
+    
+}
+.corousal .active img{
+    width: 150%;
+    height: 160%;
+    z-index: -1;
+    
+}
+.corousal img{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: scaleAndFade 10s linear  forwards;
+
+}
+/* .corousal-item .active{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height:60vh;
+    transition: transform 2s linear;
+} */
+
+@keyframes scaleAndFade {
+    0% {
+      transform: scale(1);
+      opacity: 1.2;
+    }
+    25% {
+        transform: scale(1.1);
+        opacity: 1.1;
+      }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    75% {
+        transform: scale(1.3);
+        opacity: 0.9;
+      }
+    100% {
+      transform: scale(1.4);
+      opacity: 0.8;
+    }
+  }
+  .head{
+    width: 712px;
+    margin: 100px 0px 120px 30px;
+    animation: scaleLeftToFull 2s forwards; 
+    animation-iteration-count: 1;
+    overflow: hidden;
+    
+
+  }
+  .headTop{
+    color: white;
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 50px;
+    text-shadow: -4px -4px 4px rgba(240, 237, 237, 0.5);
+    margin-bottom: 20px;
+    span{
+        
+        color: rgb(9, 150, 9);
+    }
+
+  }
+  .headMiddle{
+    padding: 20px 40px;
+    color: white;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace ;
+    text-shadow: -1px -1px 1px white;
+  }
+  @keyframes scaleLeftToFull {
+    0% {
+        transform: translateX(-100%); /* Start width */
+    }
+    100% {
+        transform: translateX(0);  /* Full width */
+
+    }
+  }
+  .headBottom{
+    margin: 20px 50px;
+    display: flex;
+    justify-content: flex-start;
+    
+    div{
+        padding: 15px 25px;
+        background-color: rgb(9, 150, 9);
+        color: white;
+        font-family:'Courier New', Courier, monospace ;
+        font-weight: 800;
+        cursor: pointer;
+    }
+  }
+
+    .headBottom:hover{
+      
+      font-weight: 1000;
+      font-size: 18px;
+      
+    
+  }
+  .section{
+    
+ 
+  height: 400px;
+  background: url('./images/section.avif') right 0px / cover fixed;
+  /* background-image: url("./images/section.avif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right -10px; */
+
+  
+ 
+  }

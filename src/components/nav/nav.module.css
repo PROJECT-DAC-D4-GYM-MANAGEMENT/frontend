@@ -1,0 +1,95 @@
+
+.logoCon{
+    height:60px;
+    width: 60px;
+   }
+   .logo{
+       height: 100%;
+       width: 100%;
+   }
+   .name{
+       font-size: 30px;
+       color: white;
+       margin-left: 20px;
+   
+   }
+   .nav{
+    
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: white;
+
+   }
+   .header_left{
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .header_middle{
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .header_right{
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   
+   .inner {
+    
+    font-weight: 500;
+    /* background: black; */
+    color: white;
+    padding: 10px 15px;
+  }
+  
+  .outer:hover .inner {
+    /* margin: auto;
+    background: linear-gradient(#20c075 , #20c075) white no-repeat 0 0;
+    background-size: 0 100%;
+    animation: stripes 0.5s linear 1 forwards; */
+    color:#20c075;
+    cursor: pointer;
+  }
+  /* .outer:hover .inner{
+    mix-blend-mode: multiply;
+  } */
+  
+  @keyframes stripes {
+    to {
+      background-size:100% 100%;
+    }
+  }
+  .header_middle span{
+   padding: 0px 9px;
+   }
+
+   
+   .login{
+    border: 0.2px solid white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+   }
+   .login span{
+    padding-right: 10px;
+   }
+
+  a{
+   color: white;
+   text-decoration: none;
+   }
+   .header_right:hover .login{
+    border: 0.2px solid #20c075;
+    color: #20c075;
+   }
+   .active{
+    color: #20c075;
+   }
+   .activeLink{
+    border: 0.2px solid #20c075;
+   }

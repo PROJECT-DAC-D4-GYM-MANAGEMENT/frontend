@@ -1,0 +1,269 @@
+.signup_upper{
+    background: #1c1a1a8c;
+    /* position: relative;; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin: 100px 0px; */
+}
+ .img{
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    width:100vw;
+    height:100vh;
+    z-index: -1;
+ }
+ .img img{
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+ }    
+.signup_inner{
+    /* position: relative; */
+    width: 60%;
+    height: 480px;
+    display: flex;
+    border:10px solid black;
+    border-radius: 10px;
+    border-bottom-left-radius: 30px;
+    /* margin-top: 50px; */
+    
+    
+    
+
+}
+
+
+.signup_left{
+    width: 50%;
+    border-right: 10px sloid rgb(22, 21, 21);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    
+
+}
+
+.signup_right{
+    width: 50%;
+    border-left: 10px solid black;
+    margin-top: 0px;
+    position: relative;
+    /* padding: 30px 20px 0px 20px; */
+
+}
+.corousal img{
+height: 230px;
+width: 90%;
+border-radius: 20px;
+}
+.logo_wrapper{
+   
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+
+}
+.logo {
+    height :80px;
+    width: 100px;
+   
+}
+.logo img{
+    height: 100%;
+    width: 100%;
+    
+}
+.slogan{
+    /* margin:0px 20px; */
+    color: #9ba79b;
+    width: 60%;
+    font-weight: 600;
+    font-family: cursive;
+
+    /* margin-left: 20px; */
+}
+
+
+
+
+.signup_right input
+{
+    background-color :transparent;
+    color: #9ba79b ;
+    height: 45px;
+    
+}
+
+.signup_right input:focus
+{
+    background-color :transparent;
+    color:  #9ba79b;
+
+}
+
+
+.signup_right  label
+{
+    color: #9ba79b !important;
+
+}
+
+
+.signup_right  input + label:after {
+   background: transparent !important;
+   color: #9ba79b !important;
+}
+
+.signup_right input:focus + label {
+    color: #9ba79b  !important;
+    font-size: 14px  !important;
+  }
+  .msg{
+    color:red;
+    position: absolute;
+    right:0px;
+    top:16px;
+    font-size: 10px;
+  }
+  .bottom{
+    
+    position: absolute;
+    /* background-color: black; */
+bottom: 0px;
+right: 0px;
+left: 0px;
+border-top: 10px solid black;
+padding: 10px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+  }
+
+  .submit{
+
+    /* display: flex;
+    justify-content: space-between;
+    align-items: flex-end; */
+    width: 30%;
+    /* padding: 0px 5px; */
+}
+
+.head{
+    /* position: absolute; */
+    /* background-color: red; */
+    
+    width: 60%;
+    margin-bottom: 30PX;
+    color: #9ba79b;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.hello{
+    /* width: 30%; */
+    background-color: transparent;
+   margin:0px 30px
+}
+.hello img{
+    height: 60px;
+    width: 60px;
+    background-color: transparent;
+}
+
+.hello1{
+  
+    background-color: transparent;
+}
+.hello1 img{
+    height: 60px;
+    width: 600px;
+    background-color: transparent;
+}
+.signin{
+    /* padding-right: 30px; */
+    color:#9ba79b
+    
+}
+.link{
+    margin:0px 5px 0px 10px;
+}
+.form{
+    margin: 50px 20px 0px 20px;
+}
+.form label{
+color: #9ba79b;
+display: flex;
+margin-bottom: 10px;
+justify-content: flex-start;
+
+
+}
+.form input::placeholder
+{
+    /* #212529 */
+    color: #9ba79b;
+}
+.email{
+    margin-bottom: 30px;
+    position: relative;
+}
+.pw{
+    margin-bottom: 30px;
+    position: relative;
+}
+.signin button{
+    margin: 5px 0px 35px 0px;
+}
+.inactive{
+    width: 100%;
+    border: 2px  solid #9ba79b;
+    border-radius: 10px;
+    background-color: transparent;
+  text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: not-allowed;
+  padding: 7px 45px ;
+    z-index: 1111 ; 
+    color: #9ba79b;
+    font-size: 20px;
+    font-weight: 800;
+}
+.active{
+    width: 100%;
+    border: 2px  solid #198754;
+    border-radius: 10px;
+    background-color: transparent;
+  text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+  padding: 7px 0px ;
+    z-index: 1111 ; 
+    color: #198754;
+    font-size: 20px;
+    font-weight: 800;
+}
+.signup{
+    width: 100%;
+    border: 2px solid #9ba79b;
+    padding: 10px 0px ;
+    border-radius: 10px;
+    text-align: center;
+    /* margin: ; */
+    color: #9ba79b;
+
+}
+.link{
+    margin-left: 10px;
+}
