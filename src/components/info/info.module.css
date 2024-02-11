@@ -1,0 +1,105 @@
+.info{
+    height: 700px;
+    background: url('./images/section.avif') right 0px / cover fixed;
+    position:relative
+}
+
+.section{
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.secleft{
+    /* position: absolute; */
+    width: 60%;
+    /* background-color: black; */
+    
+}
+
+
+.cor1{
+    position: absolute;
+    height:200px;
+    width: 300px;
+    top:80px;
+    left:240px;
+    overflow: hidden;
+
+
+}
+.cor1 img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+}
+.cor2{
+    position: absolute;
+    height:200px;
+    width: 300px;
+    top:250px;
+    left:50px;
+    overflow: hidden;
+
+}
+.cor2 img{
+    
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+}
+.cor3{
+    position: absolute;
+    height:200px;
+    width: 300px;
+    top:250px;
+    left:400px;
+    overflow: hidden;
+
+}
+.cor3 img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+}
+.cor4{
+    position: absolute;
+    height:200px;
+    width: 300px;
+    top:420px;
+    left:240px;
+    overflow: hidden;
+
+}
+.cor4 img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+}
+.secRight{
+    /* position: absolute; */
+margin-top: 180px;
+width: 45%;
+padding-right: 60px;
+
+}
+.upper{
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 50px;
+    color: rgb(9, 150, 9);
+    margin-bottom: 50px;
+    text-align: left;
+}
+.bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace ;
+    div{
+        margin-bottom: 10px;
+    }
+}
