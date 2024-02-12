@@ -28,9 +28,9 @@ const Signup = () => {
         userApi(values, "signup").then((res) => {
             
             res.status?toasty(true, "succesful"): toasty(false, "please try again with proper credentials");
-
+             
             setTimeout(() => {
-              navigate("/signin");
+              navigate("/signin",{ state: { value:"home" } });
             }, 2000);
 
           })

@@ -98,8 +98,12 @@ padding-right: 60px;
     align-items: flex-start;
     color: white;
     font-size: 20px;
+    font-weight: 800;
     font-family:'Courier New', Courier, monospace ;
     div{
         margin-bottom: 10px;
+    }
+    span{
+        padding-left: 15px;
     }
 }

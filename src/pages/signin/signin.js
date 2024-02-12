@@ -3,7 +3,7 @@ import { initialSigninValues } from "../../constant/form";
 import Form from "react-bootstrap/Form";
 import styles from "./signin.module.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Corousal from "../../components/corousal/corousal";
 import { image } from "../../constant/SignupCorousalImage/image";
 import logo1 from "../../assets/signin/picturetopeople.org-5727749cc0e912c24b7600d0e2cb56f645f13a3cd51f2d33b3.png";
@@ -19,6 +19,9 @@ import Nave from "../../components/nav/nave";
 const Signin = () => {
   const [valid, setValid] = useState(false);
   const dispatch=useDispatch();
+  const navigate=useNavigate();
+  const {state}=useLocation();
+  // console.log(state)
   const { values, touched, errors, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialSigninValues,
@@ -29,8 +32,9 @@ const Signin = () => {
           console.log(res)
           res.status && sessionStorage.setItem("user",JSON.stringify(res.data))
           res.status ? toasty(true, "succesful"): toasty(false, "please try again");
+          dispatch(addUser(res?.data?.role))
           setTimeout(()=>{
-            
+            state.value="home"?navigate("/"):navigate(-1);
           },2000)
           console.log(res)
         }).catch((err)=>{
