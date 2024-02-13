@@ -44,7 +44,7 @@ const Nave = ({ page }) => {
 
         <div className={styles.outer } onClick={()=>{navigateTo("/plans")}}>
           <div className={styles.inner}>
-            <div className={page=="store"?styles.active:""}>
+            <div className={page=="plan"?styles.active:""}>
             <FontAwesomeIcon icon={faStore} />
             <span>Plans</span>
             </div>

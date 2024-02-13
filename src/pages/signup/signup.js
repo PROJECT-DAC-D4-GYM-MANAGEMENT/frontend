@@ -30,7 +30,7 @@ const Signup = () => {
             res.status?toasty(true, "succesful"): toasty(false, "please try again with proper credentials");
              
             setTimeout(() => {
-              navigate("/signin",{ state: { value:"home" } });
+              res.status && navigate("/signin",{ state: { value:"home" } });
             }, 2000);
 
           })
@@ -314,7 +314,9 @@ const Signup = () => {
                   <div className={styles.signin}>
                     <div>
                       Already Have an Account ?{" "}
-                      <Link className={styles.link} to="/signin">
+                      <Link className={styles.link} to="/signin"
+                      state={{  value:"home"  }}
+                      >
                         Sign In
                       </Link>
                     </div>

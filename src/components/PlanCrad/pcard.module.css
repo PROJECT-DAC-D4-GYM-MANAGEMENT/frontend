@@ -1,0 +1,119 @@
+.main{
+ 
+  width:500px;
+  height:200px;
+  background-color: rgb(15, 14, 14);
+  box-shadow:  0 0 8px  rgba(148, 143, 143, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  
+  
+
+}
+
+.lower{
+  transform-origin: top;
+  transform: scaleY(0);
+}
+.active{
+  transform: scaleY(1); 
+}
+.name{
+  font-weight: 600;
+  color:white;
+  font-size: 30px;
+  font-family:'Courier New', Courier, monospace ;
+}
+.price{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 50px;
+  font-family:'Courier New', Courier, monospace ;
+  color:  rgb(9, 150, 9);;
+  font-weight: 600;
+}
+
+.desc{
+  margin-top: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  div{
+    margin-bottom: 5px;
+  }
+ span{
+  padding-left: 15px;
+ }
+}
+.btn{
+  position: absolute;
+  color: white;
+  bottom:25px;
+  right:20px;
+  background-color: rgb(9, 150, 9);
+  padding: 8px 23px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.downl{
+    position: absolute;
+  
+   background-color: rgb(15, 14, 14);
+  top :0px;
+  left:110%;
+  border-radius: 10px;
+  width:500px;
+  height:200px;
+  transform: scaleX(0);
+  transition: transform 1s linear;
+  transform-origin: left;
+  /* z-index: -5; */
+ 
+
+  
+}
+
+.downr{
+  position: absolute;
+
+ background-color: rgb(15, 14, 14);
+top :0px;
+right:110%;
+border-radius: 10px;
+width:500px;
+height:200px;
+transform: scaleX(0);
+transition: transform 1s linear;
+transform-origin: right;
+/* z-index: -5; */
+
+
+
+}
+.active{
+   transform: scaleX(1);
+  
+}
+@keyframes dropdown {
+  0% {
+      transform: translateY(0);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(1);
+      opacity: 1;
+  }
+}
+
+
+
+#animateButton:active + .animated-element {
+  display: block; /* Show element when button is clicked */
+}

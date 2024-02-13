@@ -34,7 +34,7 @@ const Signin = () => {
           res.status ? toasty(true, "succesful"): toasty(false, "please try again");
           dispatch(addUser(res?.data?.role))
           setTimeout(()=>{
-            state.value="home"?navigate("/"):navigate(-1);
+            state?.value=="home"?navigate("/"):navigate(-1);
           },2000)
           console.log(res)
         }).catch((err)=>{
