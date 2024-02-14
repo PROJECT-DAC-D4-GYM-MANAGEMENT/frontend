@@ -1,7 +1,7 @@
 import ReactVisibilitySensor from "react-visibility-sensor"
 import Corousal from "../corousal/corousal"
 import styles from "./pcard.module.css"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,10 @@ import AccordionContext from 'react-bootstrap/AccordionContext';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
+import { Spin } from "antd";
+import Slot from "../Slot/slot";
+import axios from "axios";
+import { config } from "../../config/config";
 
 
 
@@ -24,8 +28,19 @@ const ref=useRef(null);
 const inView=useInView(ref);
 const mianControl=useAnimation();
 const navigate=useNavigate();
+const [slot,setSlot]=useState([]);
+const token=JSON.parse(sessionStorage.getItem("user"))?.jwt;
+
 useEffect(()=>{
 
+  if(slot.length==0){{
+    axios.get(`${config.base}slot/trainer`,{headers:{Authorization :`Bearer ${token}` }}).then((res)=>{
+        console.log(res.data)
+        setSlot(res.data)
+     }).catch((err)=>{
+        console.log(err)
+     })
+  }}
 
 if(inView){
  mianControl.start("visible")
@@ -87,11 +102,13 @@ transition={{duration:1,delay:0}}
 
                  {
                   (
-                 <div className={`${i%2==0?styles.downl:styles.downr} ${show ==index ?styles.active:""}`}>
-                    
-                   hello
+                  
+                    <div className={`${i%2==0?styles.downl:styles.downr} ${show ==index ?styles.active:""}`}>
+                     {console.log(show,index)}
+                   <Slot data={slot}  isactive={show == index}/>
                     
                  </div>
+                   
                     )
                  }
                  

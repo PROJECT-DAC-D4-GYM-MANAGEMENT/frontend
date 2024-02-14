@@ -40,3 +40,38 @@
 body{background-color:black ;}
 
 
+/* .ant-select{
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  background-color: black;
+ color:rgb(13, 14, 13) !important;
+ 
+ span{
+  color: green;
+ }
+   */
+/* } */
+/* .ant-select-selector{
+  background: black !important;
+}
+.ant-select-selection-search{
+  background-color: black;
+  color: green;
+}
+
+.ant-select-selection-placeholder{
+ color :green !important;
+} */
+
+.form-select{
+  background-color: black  !important;
+  border:0.5px solid green !important;
+  box-shadow: -1px -1px 1px green !important;
+  color: green !important;
+  cursor: pointer;
+
+  /* options   */
+}
+
+ 
