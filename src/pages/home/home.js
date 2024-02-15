@@ -1,4 +1,5 @@
 import Corousal from "../../components/corousal/corousal";
+import HomePlan from "../../components/homeplan/homeplan";
 import Info from "../../components/info/info";
 import Nave from "../../components/nav/nave";
 import styles from "./home.module.css";
@@ -28,6 +29,7 @@ const Home = () => {
 
       <div className={styles.section}>
         <Info/>
+        <HomePlan/>
       </div>
     </div>
   );

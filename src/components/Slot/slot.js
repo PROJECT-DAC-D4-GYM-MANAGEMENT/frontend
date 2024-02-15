@@ -5,19 +5,25 @@ import { config } from "../../config/config";
 import styles from "./slot.module.css";
 import Form from "react-bootstrap/Form";
 
-const Slot = ({ isactive, data }) => {
+const Slot = ({ isactive, data ,pay}) => {
   const [load, setLoad] = useState(true);
   const token = JSON.parse(sessionStorage.getItem("user"))?.jwt;
-  const [slot, setSlot] = useState({});
-  const [trainer, setTrainer] = useState({});
+  const [slot, setSlot] = useState(0);
+  const [list, setList] = useState([]);
+  const[ trainer,setTrainer]=useState(0);
+    
 
   const onChangeSlot = (e) => {
-    console.log(e.target.value.id)
-    setSlot(e.target)
+
+    setSlot(JSON.parse(e.target.value).slot.id);
+    setList(JSON.parse(e.target.value)?.trainerList);
+    
   };
 
-  const onChangeTrainer = (value) => {
-    console.log(value);
+  
+
+  const onChangeTrainer = (e) => {
+    setTrainer(JSON.parse(e.target.value).id);
   };
   useEffect(() => {
     isactive &&
@@ -35,16 +41,13 @@ const Slot = ({ isactive, data }) => {
             <div className={styles.drop}>
               <div className={styles.first}>
            
-                <Form.Select  onChange={onChangeSlot}>
-                  <option> Select Slot</option>
+                <Form.Select onChange={onChangeSlot}>
+                  <option  value={{}}> Select Slot</option>
                   {
                     data.map((a)=>{
-                        return (
-                            <option  className={styles.option} style={{
-                                margin:"20px"
-
-                            }}value={a}>{`${a?.slot?.start} - ${a?.slot?.end}`}</option>
-                        )
+                        return (   
+                            <option value={JSON.stringify(a)}> {`${a?.slot?.start} - ${a?.slot?.end}`}</option>
+                              )
                     })
                   }
                 </Form.Select>
@@ -52,19 +55,22 @@ const Slot = ({ isactive, data }) => {
               </div>
 
               <div className={styles.second}>
-                {/* <Form.Select  onChange={onChangeSlot}>
-                  <option> Select Trainer</option>
+                <Form.Select  onChange={onChangeTrainer} disabled={list.length<=0}>
+                  <option value={{}}> Select Trainer</option>
                   {
-                    slot?.trainerList.map((a)=>{
+                    list?.map((a)=>{
                         return (
-                            <option  className={styles.option} style={{
-                                margin:"20px"
-
-                            }}value={a}>{`${a?.user?.first} - ${a?.user?.last}`}</option>
+                            <option value={JSON.stringify(a)}>{`${a?.user?.first} - ${a?.user?.last}`}</option>
                         )
                     })
                   }
-                </Form.Select> */}
+                </Form.Select>
+              </div>
+
+              <div  className={`${styles.third}   ${slot && trainer? styles.active:styles.not}`} onClick={()=>{
+                pay({slotId:slot,trainerId:trainer})
+              }}>
+                Pay Now
               </div>
               
             </div>

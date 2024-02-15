@@ -10,11 +10,12 @@ import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import Card from 'react-bootstrap/Card';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Spin } from "antd";
 import Slot from "../Slot/slot";
 import axios from "axios";
 import { config } from "../../config/config";
+import { replace } from "formik";
 
 
 
@@ -30,6 +31,24 @@ const mianControl=useAnimation();
 const navigate=useNavigate();
 const [slot,setSlot]=useState([]);
 const token=JSON.parse(sessionStorage.getItem("user"))?.jwt;
+
+
+const pay=(a)=>{
+  a={...a,planId:show}
+  console.log(a)
+  sessionStorage.setItem("membership",JSON.stringify(a))
+
+axios.get(`http://localhost:9999/payment/${data?.price}`).then((res)=>{
+    
+    
+    window.location.href=res.data.data;
+
+ 
+}).catch((err)=>{
+
+})
+ console.log({...data,planID:index})
+}
 
 useEffect(()=>{
 
@@ -52,7 +71,7 @@ if(inView){
     
   <div  ref={ref}>
 <motion.div 
-style={index%2==1?{ originX: 0 }:{ originX: 1 }}
+style={i%2==1?{ originX: 0 }:{ originX: 1 }}
 variants={
     {   
 
@@ -105,7 +124,7 @@ transition={{duration:1,delay:0}}
                   
                     <div className={`${i%2==0?styles.downl:styles.downr} ${show ==index ?styles.active:""}`}>
                      {console.log(show,index)}
-                   <Slot data={slot}  isactive={show == index}/>
+                   <Slot data={slot}  isactive={show == index} pay={pay}/>
                     
                  </div>
                    

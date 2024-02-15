@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Loader from "../../components/loader/loader";
 import { useEffect, useRef, useState } from "react";
 import { config } from "../../config/config";
@@ -15,6 +15,7 @@ const [load,setLoad]=useState(true);
 const [plan,setPlan]=useState([]);
 const ref=useRef(null);
 const [show ,setShow]=useState(0);
+
 
 const onCancel=()=>{
     setShow(0)
