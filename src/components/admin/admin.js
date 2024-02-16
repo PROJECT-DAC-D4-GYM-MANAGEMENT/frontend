@@ -14,6 +14,12 @@ import axios from "axios";
 import { config } from "../../config/config";
 import CountUp from "react-countup";
 import { Col, Row, Statistic } from "antd";
+import Chart from "../chart/chart";
+
+import CollapsibleTable from "../admindetails/admindetail";
+
+
+
 
 const Admin = () => {
   const [detail, setDetail] = useState(
@@ -151,7 +157,8 @@ const Admin = () => {
         </div>
         
       </div>
-
+      <Chart/>
+      <CollapsibleTable/>
       <div className={styles.trainee}></div>
 
       <div className={styles.trainer}></div>

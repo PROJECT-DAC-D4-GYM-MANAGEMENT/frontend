@@ -133,3 +133,6 @@ body{background-color:black ;}
 .ant-statistic-content-value{
   font-size: 40px !important;
 }
+.MuiChartsAxis-tickLabel{
+  color: green !important;
+}

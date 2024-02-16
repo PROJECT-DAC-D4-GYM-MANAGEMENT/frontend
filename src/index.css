@@ -36,3 +36,6 @@ code {
 ::-webkit-scrollbar-corner {
   background-color: transparent;
 }
+.MuiBarElement-root{
+  margin-bottom: 30px !important;
+}
