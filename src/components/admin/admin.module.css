@@ -1,7 +1,7 @@
 
 .main{
     
-    background-color: rgb(46, 43, 43);
+    background-color:rgb(20, 19, 19);
     height:100vh;
     width: 100vw;
 }
@@ -51,7 +51,7 @@ div{
 
 }
 .topl{
-    width: 60%;
+    width: 64%;
     border-radius: 12px;
      background-color: black;
     overflow: hidden;
@@ -128,4 +128,36 @@ position: relative;
         padding: 20px 10px;
     }
 
+}
+.countwrapper {
+    padding: 34px;
+    display: flex;
+    justify-content: space-between;
+}
+.count div{
+    
+    background-color: black;
+    color:rgb(9, 150, 9) !important;
+    
+    /* font-size: 30px !important; */
+    
+}
+.count{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 20%;
+    padding: 20px 10px;
+    color:rgb(9, 150, 9) !important;
+    font-size: 60px !important;
+    border: 0.5px solid rgb(9, 150, 9) ;
+    border-radius: 10px;
+
+
+}
+.title{
+    font-size: 20px;
 }
