@@ -9,10 +9,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "react-slick";
 import { config } from "../../config/config";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 const HomePlan=()=>{
-
+ const navigate=useNavigate();
 const [data,setData]=useState([]);
 
     const settings = {
@@ -34,7 +35,7 @@ const mianControl=useAnimation();
 useEffect(()=>{
 if(data.length==0){
     axios.get(`${config.base}plan/all`).then((res)=>{
-        
+        console.log(res.data)
         setData(res.data)
     })
 }
@@ -48,6 +49,11 @@ if(inView){
         
     
   <div className={styles.info} ref={ref}>
+
+<div  className ={styles.plan} onClick={()=>{
+   navigate("/plans")
+   }}>  See All</div>
+
 <motion.div 
 style={{ originY: 0 }}
 variants={
@@ -62,19 +68,49 @@ transition={{duration:1.5,delay:0.5}}
 >
        
 <div className="slider-container">
+ 
+     
+
       <Slider {...settings}>
         
           {data.map((a)=>{
             return(
-                <div className={styles.card}>1</div>
+                <div className={styles.card}>
+               
+               <div className={styles.name}>{a.name}</div>
+              
+               <div className={styles.price}>₹{a.price}</div> 
+               <div className={styles.dur} >{a.durationMonths} Months</div>
+               
+               <div className={styles.desc}>
+                <div> <span>
+                <FontAwesomeIcon icon={ faCircleCheck} />
+                    </span>
+                    {a?.dscription[0]}</div>
+                <div><span>
+                <FontAwesomeIcon icon={ faCircleCheck} />
+                    </span>
+                    {a?.dscription[1]}</div>
+                <div><span>
+                <FontAwesomeIcon icon={ faCircleCheck} />
+                    </span>
+                    {a?.dscription[2]}</div>
+               </div>
+                </div>
 
             )
           })}
         
       </Slider>
+      
     </div>
 
+
+    
+
       </motion.div>
+      
+   
   </div>
         
          

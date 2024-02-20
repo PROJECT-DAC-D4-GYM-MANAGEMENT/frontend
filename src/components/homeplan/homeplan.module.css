@@ -3,6 +3,7 @@
     background: url('./darkbackground.avif') right 0px / cover fixed;
     position:relative;
     padding-top: 100px;
+    overflow: hidden;
     
 }
 
@@ -112,7 +113,83 @@ padding-right: 60px;
 
 
 .card{
-   
+    color :white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    
 }
 
+.name{
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 30px;
+    color: rgb(9, 150, 9);
+    text-align: start;
+    margin: 20px 0px;
+}
+
+
+.price{
+    
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 50px;
+    color: rgb(9, 150, 9);
+    margin: 20px 0px;
+    text-align: start;
+}
+
+.desc{
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 10px;
+    color: white;
+    text-align: start;
+    margin: 20px 0px;
+    div{
+        margin: 5px 0px;
+    }
+    span{
+        padding-right: 10px;
+    }
+}
+.dur{
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(9, 150, 9); 
+    text-align: start;
+    margin: 20px 0px;
+   
+}.head{
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 50px;
+    color: rgb(9, 150, 9);
+    
+    margin: 10px 0px 40px 0px;
+}
 /* https://img.freepik.com/free-photo/solid-concrete-wall-textured-backdrop_53876-129493.jpg?w=1800&t=st=1708013183~exp=1708013783~hmac=b42ae30f0b06efbc58282ff66eb10ec4ca7db6d3f4e7151d2c9631e85293886f */
+
+
+.plan{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: rgb(9, 150, 9);
+    cursor: pointer;
+
+}
+
+
+.plan:hover{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+   color: white;
+   text-decoration: underline;
+    
+}

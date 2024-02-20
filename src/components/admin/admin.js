@@ -17,6 +17,7 @@ import { Col, Row, Statistic } from "antd";
 import Chart from "../chart/chart";
 
 import CollapsibleTable from "../admindetails/admindetail";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -25,19 +26,20 @@ const Admin = () => {
   const [detail, setDetail] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );
+  const navigate=useNavigate();
   const [addess, setAddress] = useState([]);
   const formatter = (value) => <CountUp end={value} separator="," />;
   useEffect(() => {
     axios
-      .get(`${config.base}/all`)
-      .then((res) => {})
+      .get(`${config.base}membership`,{headers:{Authorization:`Baerer ${JSON.parse(sessionStorage.getItem("user"))?.jwt}`}})
+      .then((res) => {console.log(res)})
       .catch((e) => {});
   });
 
   return (
     <div className={styles.main}>
       <div className={styles.nav}>
-        <div className={styles.left}>
+        <div className={styles.left} onClick={()=>{navigate("/")}}>
           <div>
             {" "}
             <img src={logo} />{" "}

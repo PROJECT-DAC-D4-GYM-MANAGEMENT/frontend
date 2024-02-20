@@ -30,13 +30,13 @@ const inView=useInView(ref);
 const mianControl=useAnimation();
 const navigate=useNavigate();
 const [slot,setSlot]=useState([]);
-const token=JSON.parse(sessionStorage.getItem("user"))?.jwt;
+const user=JSON.parse(sessionStorage.getItem("user"));
 
 
 const pay=(a)=>{
   a={...a,planId:show}
   console.log(a)
-  sessionStorage.setItem("membership",JSON.stringify(a))
+  sessionStorage.setItem("membership",JSON.stringify({...a,traineeId:user?.id}))
 
 axios.get(`http://localhost:9999/payment/${data?.price}`).then((res)=>{
     
@@ -53,7 +53,7 @@ axios.get(`http://localhost:9999/payment/${data?.price}`).then((res)=>{
 useEffect(()=>{
 
   if(slot.length==0){{
-    axios.get(`${config.base}slot/trainer`,{headers:{Authorization :`Bearer ${token}` }}).then((res)=>{
+    axios.get(`${config.base}slot/trainer`,{headers:{Authorization :`Bearer ${user?.jwt}` }}).then((res)=>{
         console.log(res.data)
         setSlot(res.data)
      }).catch((err)=>{

@@ -15,6 +15,9 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import styles from "./admindetail.module.css"
 
+import axios from 'axios';
+import { config } from '../../config/config';
+
 function createData(name, specialization,salary,experience) {
   return {
     name,
@@ -50,7 +53,7 @@ Row.propTypes = {
         Trainee: PropTypes.arrayOf(
         PropTypes.shape({
            
-            slot: PropTypes.number.isRequired,
+            slot: PropTypes.string.isRequired,
           plan: PropTypes.string.isRequired,
           traineename: PropTypes.string.isRequired,
           start: PropTypes.string.isRequired,
@@ -98,11 +101,11 @@ function Row(props) {
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Trainee</TableCell>
-                    <TableCell>plan</TableCell>
-                    <TableCell align="right">slot</TableCell>
-                    <TableCell align="right">start</TableCell>
-                    <TableCell align="right">End</TableCell>
+                    <TableCell>Trainee-Name</TableCell>
+                    <TableCell>Plan</TableCell>
+                    <TableCell align="right">Slot</TableCell>
+                    <TableCell align="right">Start-Date</TableCell>
+                    <TableCell align="right">End-Date</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -133,16 +136,67 @@ function Row(props) {
 
 
 
-const rows = [
-  createData('pqru', "pqrs", 6, 24),
-  createData('pqru', "pqrs", 6, 24),
-  createData('pqru', "pqrs", 6, 24),
-  createData('pqru', "pqrs", 6, 24),
-  createData('pqru', "pqrs", 6, 24),
-  createData('pqru', "pqrs", 6, 24),
-];
+// const rows = [
+//   createData('pqru', "pqrs", 6, 24),
+//   createData('pqru', "pqrs", 6, 24),
+//   createData('pqru', "pqrs", 6, 24),
+//   createData('pqru', "pqrs", 6, 24),
+//   createData('pqru', "pqrs", 6, 24),
+//   createData('pqru', "pqrs", 6, 24),
+// ];
 
 export default function CollapsibleTable() {
+const [rows,setRow]=React.useState([]);
+  React.useEffect(()=>{
+    const { jwt } = JSON.parse(sessionStorage.getItem("user"));
+     axios.get(`${config.base}membership`, {
+      headers: { Authorization: `Bearer ${jwt}` },
+    }).then((res)=>{
+      
+     const{data}=res;
+      const map = {};
+      data.forEach((a) => {
+        if (map[a.trainer.id]) {
+          const b = {
+            traineename: a?.trainee?.user?.first,
+            plan: a.plan.name,
+            slot: `${a.slot.start} - ${a.slot.end}`,
+            start: a.start,
+            end: a.end,
+          };
+          map[a.trainer.id].Trainee.push(b);
+        } else {
+          map[a.trainer.id] = {
+            name: a?.trainer?.user?.first,
+            specialization: a?.trainer?.specialization,
+            salary: a?.trainer?.salary,
+            experience: a?.trainer?.experience,
+            Trainee: [
+              {
+                traineename: a?.trainee?.user?.first,
+                plan: a.plan.name,
+                slot:`${a.slot.start} - ${a.slot.end}`,
+                start: a.start,
+                end: a.end,
+              },
+            ],
+          };
+        }
+      });
+
+
+      let arr=[];
+      for(let a in map){
+        arr.push(map[a])
+      }
+      setRow([...arr])
+
+
+    }).catch((err)=>{
+      
+    })
+  })
+  
   return (
     <div className={styles.details}>
         <div className={styles.head}>
@@ -154,8 +208,8 @@ export default function CollapsibleTable() {
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Name</TableCell>
-            <TableCell align="right">SPecialisation</TableCell>
+            <TableCell>Trainer-Name</TableCell>
+            <TableCell align="right">Specialisation</TableCell>
             <TableCell align="right">Salary</TableCell>
             <TableCell align="right">Experience</TableCell>
           </TableRow>

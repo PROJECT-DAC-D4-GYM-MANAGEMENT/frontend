@@ -1,0 +1,203 @@
+.loader {
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+   /* Green background color */
+    border-radius: 4px; /* Rounded corners for the skeleton */
+   padding: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid white;
+    
+    
+  }
+  .loader1{
+    height: 220px;
+   
+    animation: loading 1.5s ease-in-out infinite; /* Animation properties */
+    margin: 10px;
+    background: linear-gradient(to right, #31154d, #092d60, #1b0756);;
+    border-radius: 4px;
+    overflow: hidden;
+    background-size: 200%;
+    background-position: left;
+    
+  }
+  .loader2{
+    height: 90px;
+   
+    animation: loading 1.5s ease-in-out infinite; /* Animation properties */
+    margin: 10px;
+    background:linear-gradient(to right, #31154d, #092d60, #1b0756);;
+    border-radius: 4px;
+    overflow: hidden;
+    background-size: 200%;
+    background-position: left;
+  }
+  
+  .loader3{
+    height: 90px;
+   
+    animation: loading 1s linear infinite; /* Animation properties */
+    margin: 10px;
+    background: linear-gradient(to right, #31154d, #092d60, #1b0756);;
+    border-radius: 4px;
+    overflow: hidden;
+    background-size: 200%;
+  background-position: left;
+  }
+  
+  @keyframes loading {
+    0%, 50%{
+        background-position: right;
+    }
+  25%,100%{
+      background-position: left;
+  }
+  }
+  .load{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+.show{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+}
+
+  .data{
+   
+    width: 300px;
+    border: 1px solid  white;
+    padding: 10px 20px 5px 20px;
+    border-radius: 5px;
+    margin: 20px;
+  
+ 
+      }
+
+      .img{
+        height:150px;
+        width:100%;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        
+      }
+      img{
+        height:100%;
+        width:100%
+      }
+      
+      
+      .data2{
+        font-family:'Courier New', Courier, monospace ;
+        font-weight: 600;
+        font-size: 20px;
+        background: linear-gradient(to right,  #d15b06, #00ff00); /* Adjust gradient colors as needed */
+        -webkit-background-clip: text; /* Use text as a clipping mask for the gradient */
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+     
+      }
+      .data3{
+        font-family:'Courier New', Courier, monospace ;
+        font-weight: 600;
+        font-size: 12px;
+        background: linear-gradient(to right, #d15b06, #00ff00); /* Adjust gradient colors as needed */
+        -webkit-background-clip: text; /* Use text as a clipping mask for the gradient */
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+     
+      }
+      
+      .data4{
+        font-family:'Courier New', Courier, monospace ;
+        font-weight: 600;
+        font-size: 25px;
+        background: linear-gradient(to right, #d15b06, #00ff00); /* Adjust gradient colors as needed */
+        -webkit-background-clip: text; /* Use text as a clipping mask for the gradient */
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+       
+      }
+      
+     .add{
+        border: 1px solid white;
+        font-family:'Courier New', Courier, monospace ;
+        font-weight: 600;
+        font-size: 20px;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        margin: 10px 0px;
+       position: relative;
+        background: linear-gradient(to right, #d15b06, #00ff00); /* Adjust gradient colors as needed */
+        -webkit-background-clip: text; /* Use text as a clipping mask for the gradient */
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        height: 46px;
+     }
+     .before{
+        cursor: pointer;
+     }
+     .after{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        height: 100%;
+        
+        
+     }
+     .logo{
+        color: #d15b06;
+        font-size: 14px;
+        margin: 0px 10px 0px 5px;
+     }
+     .delete{
+        font-size: 15px;
+        color: #d15b06;
+        cursor: pointer;
+       
+        padding-left:10px ;
+
+     }
+     .animate{
+        width: 20px; /* Adjust width as needed */
+        height: 20px; /* Adjust height as needed */
+        color: #d15b06; /* Adjust background color as needed */
+        position: absolute;
+        left: 0;
+        top:10px;
+        animation: moveRight 1.5s linear;
+     }
+
+     
+     .top{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     }
+     @keyframes moveRight {
+        0% {
+          left: 0; /* Start position */
+          transform: rotate(-15deg); 
+        }
+        50% {
+          left: calc(50% - 25px);
+          transform: rotate(-15deg);  /* Halfway point */
+        }
+        100% {
+          left: calc(100% - 50px);
+          transform: rotate(-15deg);  /* End position */
+        }
+      }
+      .left{
+        display: flex;
+        align-items: center     ;
+      }

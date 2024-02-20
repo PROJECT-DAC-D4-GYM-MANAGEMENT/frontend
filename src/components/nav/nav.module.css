@@ -26,6 +26,7 @@
     display:  flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
    }
    .header_middle{
     display:  flex;
@@ -83,13 +84,76 @@
    color: white;
    text-decoration: none;
    }
-   .header_right:hover .login{
+   .login:hover{
     border: 0.2px solid #20c075;
     color: #20c075;
    }
+
    .active{
     color: #20c075;
    }
    .activeLink{
     border: 0.2px solid #20c075;
    }
+   .cartprofile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+   }
+
+   .cart{
+    border: 0.2px solid white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    margin: 0px 10px;
+    position: relative;
+   }
+   .profile{
+    border: 0.2px solid white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+   }
+   .profile:hover{
+    border: 0.2px solid #20c075;
+    color: #20c075;
+   }
+
+   .cart:hover{
+    border: 0.2px solid #20c075;
+    color: #20c075;
+   }
+   .length{
+    
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    font-size: 10px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    font-weight: 900;
+    border-radius: 50%;
+    top:-1px;
+    right: -1px;
+    font-size: 10px;
+    
+   }
+   .rotate{
+    animation: rotateXAxis 1s linear;
+   }
+
+   @keyframes rotateXAxis {
+    from {
+      transform: rotateY(0deg); /* Start position: no rotation */
+    }
+    to {
+      transform: rotateY(180deg); /* End position: 180 degrees rotation around the x-axis */
+    }
+  }
