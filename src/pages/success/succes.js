@@ -7,6 +7,9 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { config } from '../../config/config';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../store/slices/cart';
+import { addProductDetails } from '../../store/slices/product';
 ;
 
 
@@ -15,19 +18,31 @@ const Success=()=>{
     const token=JSON.parse(sessionStorage.getItem("user"))?.jwt;
     const navigate=useNavigate();
     const [searchParams] = useSearchParams();
-
-
+      const dispatch=useDispatch();
+    
   
     useEffect(()=>{
         const membership=JSON.parse(sessionStorage.getItem("membership"));
-        axios.post(`${config.base}membership/add`,membership,{headers:{Authorization:`Bearer ${token}`}}).then((res)=>{
-            console.log(res);
+        if(searchParams.get("id")=="plans"){
+            axios.post(`${config.base}membership/add`,membership,{headers:{Authorization:`Bearer ${token}`}}).then((res)=>{
+                console.log(res);
+                setTimeout(()=>{
+                  navigate(`/${searchParams.get("id")}`)
+                },3000)
+            }).catch((err)=>{
+                console.log(err)
+            })
+        }
+        if(searchParams.get("id")=="store"){
             setTimeout(()=>{
-              navigate(`/${searchParams.get("id")}`)
-            },3000)
-        }).catch((err)=>{
-            console.log(err)
-        })
+                navigate(`/${searchParams.get("id")}`)
+                dispatch(addProduct({}))
+                dispatch(addProductDetails({}))
+              },3000)
+           
+          
+        }
+      
        
     })
 

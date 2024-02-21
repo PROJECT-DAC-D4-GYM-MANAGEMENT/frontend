@@ -5,6 +5,7 @@ export const productSlice=createSlice({
     initialState:{productDetails:{}},
     reducers:{
         addProductDetails:(store,action)=>{
+            console.log("pay",action.payload)
           store.productDetails=action.payload;
         }
     }

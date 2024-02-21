@@ -8,6 +8,7 @@ import { faCartShopping, faCheckCircle, faTrash } from "@fortawesome/free-solid-
 import { Carousel } from "bootstrap";
 import Corousal from "../corousal/corousal";
 import { addProductDetails } from "../../store/slices/product";
+import { useNavigate } from "react-router-dom";
 
 const ProductPage = ({ current, data, index }) => {
   const [load, setLoad] = useState(index == current);
@@ -15,12 +16,13 @@ const ProductPage = ({ current, data, index }) => {
   const cart = useSelector((store) => store.cart.products);
   const [currentItem, setCurrentItem] = useState(-1);
  const product=useSelector(store=>store.details.productDetails);
+ const navigate=useNavigate();
 
   const addToCart = (a) => {
     const obj = { ...cart };
     const obj1={...product};
     obj[a.id] = (obj[a.id] || 0) + 1;
-    obj1[a.id]=obj1[a];
+    obj1[a.id]=a;
     setCurrentItem(a.id);
     dispatch(addProduct(obj));
     dispatch(addProductDetails(obj1))
@@ -28,11 +30,13 @@ const ProductPage = ({ current, data, index }) => {
 
  
   const removeFromCart = (i) => {
-    
+    const obj1={...product};
     setCurrentItem(-1);
     const obj = { ...cart };
     delete obj[i];
+    delete obj1[i]
     dispatch(addProduct(obj));
+    dispatch(addProductDetails(obj1))
   };
 
   useEffect(() => {
@@ -77,7 +81,8 @@ const ProductPage = ({ current, data, index }) => {
                     <div
                       className={styles.before}
                       onClick={() => {
-                        addToCart(a);
+                        if(!sessionStorage.getItem("user")) navigate("/signin")
+                        else addToCart(a);
                       }}
                     >
                       {" "}

@@ -11,12 +11,14 @@ const Product=()=>{
 const [isBottom,setIsBotton]=useState(false);
 const ref=useRef();
 const [current,setCurrent]=useState(0);
-const {jwt}=JSON.parse(sessionStorage.getItem("user"))
+const jwt=JSON.parse(sessionStorage.getItem("user"))?.jwt
 const[data,setData]=useState([]);
 useEffect(()=>{
- axios.get(`${config.base}product/get/${current}`,{headers:{Authorization:`Bearer ${jwt}`}}).then((res)=>{
+ axios.get(`${config.base}product/get/${current}`).then((res)=>{
     console.log(res.data)
     setData(prev => [...prev,res.data])
+ }).catch((err)=>{
+
  })
 },[])
 
