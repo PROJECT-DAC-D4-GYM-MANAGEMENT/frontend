@@ -1,26 +1,32 @@
 import { useEffect, useState } from "react";
-import { Card, Skeleton, Button } from "@nextui-org/react";
 import React from "react";
 import styles from "./productpage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../../store/slices/cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faCheckCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { Carousel } from "bootstrap";
+import Corousal from "../corousal/corousal";
+import { addProductDetails } from "../../store/slices/product";
 
 const ProductPage = ({ current, data, index }) => {
   const [load, setLoad] = useState(index == current);
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart.products);
   const [currentItem, setCurrentItem] = useState(-1);
- 
+ const product=useSelector(store=>store.details.productDetails);
 
-  const addToCart = (i) => {
+  const addToCart = (a) => {
     const obj = { ...cart };
-    obj[i] = (obj[i] || 0) + 1;
+    const obj1={...product};
+    obj[a.id] = (obj[a.id] || 0) + 1;
+    obj1[a.id]=obj1[a];
     setCurrentItem(i);
     dispatch(addProduct(obj));
+    dispatch(addProductDetails(obj1))
   };
 
+ 
   const removeFromCart = (i) => {
     
     setCurrentItem(-1);
@@ -59,7 +65,7 @@ const ProductPage = ({ current, data, index }) => {
             return (
               <div className={styles.data}>
                 <div className={styles.img}>
-                  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" />
+                 <Corousal images={a.images} timing={2000} />
                 </div>
 
                 <div className={styles.data2}>{a.name}</div>
@@ -71,7 +77,7 @@ const ProductPage = ({ current, data, index }) => {
                     <div
                       className={styles.before}
                       onClick={() => {
-                        addToCart(a.id);
+                        addToCart(a);
                       }}
                     >
                       {" "}

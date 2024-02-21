@@ -10,6 +10,7 @@ import Plan from './pages/plan/plan';
 import Success from './pages/success/succes';
 import Admin from './components/admin/admin';
 import Product from './pages/product/product';
+import Cart from './pages/cart/cart';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/success" element={<Success/>}/>
       <Route path="/admin" element={<Admin/>}/>
       <Route path="/store" element={<Product/>}/> 
+      <Route path="/cart" element={<Cart/>}/> 
      </Routes>
      <ToastContainer />
     </div>
