@@ -21,7 +21,7 @@ const ProductPage = ({ current, data, index }) => {
     const obj1={...product};
     obj[a.id] = (obj[a.id] || 0) + 1;
     obj1[a.id]=obj1[a];
-    setCurrentItem(i);
+    setCurrentItem(a.id);
     dispatch(addProduct(obj));
     dispatch(addProductDetails(obj1))
   };
