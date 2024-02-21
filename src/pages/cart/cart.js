@@ -19,6 +19,8 @@ const Cart=()=>{
 
 
   const onPay=()=>{
+    sessionStorage.setItem("cart",JSON.stringify(cart));
+    sessionStorage.setItem("productDetails",JSON.stringify(productDetails));
     axios.get(`http://localhost:9999/payment/product/${calcTotal()}`).then((res)=>{
     
     
@@ -63,7 +65,12 @@ const Cart=()=>{
   }
 
     return (
+
+
+
+        
         <div className={styles.main}>
+            
              <Nave page={"cart"} />
                <div >
                      {calcTotal() >0 && 
@@ -104,3 +111,7 @@ const Cart=()=>{
 }
 
 export default Cart;
+
+
+
+
