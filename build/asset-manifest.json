@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a0563e7a.css",
+    "main.js": "/static/js/main.fde34cbd.js",
+    "static/js/592.bf6ca574.chunk.js": "/static/js/592.bf6ca574.chunk.js",
+    "static/media/section.avif": "/static/media/section.c7e7076ed182143c6029.avif",
+    "static/media/darkbackground.avif": "/static/media/darkbackground.d05461849378c0f60924.avif",
+    "static/media/trening-15_1.jpg": "/static/media/trening-15_1.f876c558aaf4da7a4b66.jpg",
+    "static/media/fithub-high-resolution-logo-white-transparent.png": "/static/media/fithub-high-resolution-logo-white-transparent.eb8b4e1253e0e93258da.png",
+    "static/media/fithub-high-resolution-logo-transparent.png": "/static/media/fithub-high-resolution-logo-transparent.7151e91a4a401033a359.png",
+    "static/media/large-gym-sticker-posters-fitness-bodybuilding-poster-for-original-imagyxmqu3stf2rz.webp": "/static/media/large-gym-sticker-posters-fitness-bodybuilding-poster-for-original-imagyxmqu3stf2rz.35cbdeb9467e37d1aa4e.webp",
+    "static/media/bodybuilding-beginner-tips_1_480x480.webp": "/static/media/bodybuilding-beginner-tips_1_480x480.5d055a74b9122a041e1a.webp",
+    "static/media/bodybuilder-holding-dumbbells2.webp": "/static/media/bodybuilder-holding-dumbbells2.870d187870aca429d414.webp",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.a0563e7a.css.map": "/static/css/main.a0563e7a.css.map",
+    "main.fde34cbd.js.map": "/static/js/main.fde34cbd.js.map",
+    "592.bf6ca574.chunk.js.map": "/static/js/592.bf6ca574.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a0563e7a.css",
+    "static/js/main.fde34cbd.js"
+  ]
+}
