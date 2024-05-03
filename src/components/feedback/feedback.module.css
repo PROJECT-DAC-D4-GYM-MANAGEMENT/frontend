@@ -1,0 +1,49 @@
+.main{
+    height:600px;
+    background: url('./section.avif') right 0px / cover fixed;
+    position:relative
+}
+
+.img{
+    height:300px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.feedback{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.right{
+    width: 40%;
+    color: white;
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    
+    span{
+        color: rgb(9, 150, 9);
+        padding-right: 20px;
+    }
+
+}
+
+.left{
+    width: 300px;
+    color: white;
+
+}
+.head{
+    font-family:'Courier New', Courier, monospace ;
+    font-weight: 600;
+    font-size: 50px;
+    color: rgb(9, 150, 9);
+    
+    text-align: left;
+    margin: 0px 0px 70px 100px; 
+    padding-top: 50px;
+}

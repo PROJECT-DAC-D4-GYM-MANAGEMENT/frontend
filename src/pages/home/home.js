@@ -1,4 +1,5 @@
 import Corousal from "../../components/corousal/corousal";
+import Feedback from "../../components/feedback/feedback";
 import HomePlan from "../../components/homeplan/homeplan";
 import Info from "../../components/info/info";
 import Nave from "../../components/nav/nave";
@@ -30,6 +31,7 @@ const Home = () => {
       <div className={styles.section}>
         <Info/>
         <HomePlan/>
+        <Feedback/>
       </div>
     </div>
   );

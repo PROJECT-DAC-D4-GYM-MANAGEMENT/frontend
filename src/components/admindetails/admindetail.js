@@ -195,7 +195,7 @@ const [rows,setRow]=React.useState([]);
     }).catch((err)=>{
       
     })
-  })
+  },[])
   
   return (
     <div className={styles.details}>
